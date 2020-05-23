@@ -1,0 +1,54 @@
+{% extends 'clfapp/base.html' %}
+
+{% block title %}
+    <title>检测单条</title>
+{% endblock title %}
+
+{% block style %}
+    <style>
+        .container {
+            width: 800px;
+            {#height: 400px;#}
+            min-height: 250px;
+            max-height: 250px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            padding: 20px;
+            z-index: 130;
+            box-shadow: 0 3px 18px rgba(100, 0, 0, .5);
+            font-size: 16px;
+        }
+
+        .show {
+            background-color: #6cb5d9;
+        }
+    </style>
+{% endblock style %}
+
+{% block main %}
+    <div class="container">
+        <div align="center">
+
+
+            <form action="{% url 'clfapp:get_text' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form }}
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">提交</button>
+                </div>
+                {% if result %}
+                    <div class="show">
+                        <p>检测结果，您的邮件是{{ result }}</p>
+                    </div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+{% endblock main %}

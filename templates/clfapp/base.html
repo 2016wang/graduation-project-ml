@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    {% block title %}
+    {% endblock title %}
+
+    {% block style %}
+    {% endblock style %}
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary font-weight-bold">
+    <a class="navbar-brand" href="#">文本管理系统</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'clfapp:index' %}">首页<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <span class="navbar-text">
+					<a class="nav-link align-right" href="{% url 'clfapp:login' %}">登录</a>
+				</span>
+    </div>
+</nav>
+
+{% block main %}
+{% endblock main %}
+
+
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.15.0/umd/popper.js"></script>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

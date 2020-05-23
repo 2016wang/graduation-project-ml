@@ -1,0 +1,50 @@
+{% extends 'clfapp/base.html' %}
+{% block title %}
+<title>登录</title>
+{% endblock %}
+{% block style %}
+<style>
+			.container {
+				width: 420px;
+				{#height: 320px;#}
+                height: 210px;
+				min-height: 210px;
+				max-height: 210px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				margin: auto;
+				padding: 20px;
+				z-index: 130;
+				border-radius: 8px;
+				background-color: #fff;
+				box-shadow: 0 3px 18px rgba(100, 0, 0, .5);
+				font-size: 16px;
+			}
+    </style>
+{% endblock style %}
+{% block main %}
+		<div class="container">
+			<div class="col">
+				<form class="form-login" action="{% url 'clfapp:login' %}" method="post">
+					{% csrf_token %}
+                    <h3 class="text-center">欢迎登录</h3>
+					<div class="form-group">
+{#						<label for="id_username">用户名：</label>#}
+{#						<input type="text" name='username' class="form-control" id="id_username" placeholder="Username" autofocus#}
+{#						 required>#}
+                        {{ form.username }}
+					</div>
+{#					<div class="form-group">#}
+{#						<label for="id_password">密码：</label>#}
+{#						<input type="password" name='password' class="form-control" id="id_password" placeholder="Password" required>#}
+{#					</div>#}
+					<div>
+						<button type="submit" class="btn btn-primary btn-lg btn-block">登录</button>
+					</div>
+				</form>
+			</div>
+		</div>
+{% endblock main %}
